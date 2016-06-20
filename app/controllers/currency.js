@@ -1,8 +1,6 @@
 'use strict';
 
 var config = require('../../config/config');
-var bitcore = require('bitcore');
-var networks = bitcore.networks;
 
 // Set the initial vars
 var timestamp = +new Date(),
@@ -50,13 +48,13 @@ exports.index = function(req, res) {
 
       res.jsonp({
         status: 200,
-        data: { bitstamp: bitstampRate, net:networks.mainnet }
+        data: { bitstamp: bitstampRate }
       });
     });
   } else {
     res.jsonp({
       status: 200,
-      data: { bitstamp: bitstampRate, net:networks.mainnet }
+      data: { bitstamp: bitstampRate }
     });
   }
 };
